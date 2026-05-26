@@ -681,4 +681,608 @@
     }
   </script>
 </body>
+</html>      background: var(--black);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-dot svg { width: 10px; height: 10px; fill: var(--white); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 60px 60px;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      flex: 0 0 380px;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-family: var(--kr);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-3);
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      padding: 13px 26px;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.75; }
+
+    .btn-ghost {
+      font-size: 13px;
+      color: var(--gray-3);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      padding-bottom: 1px;
+    }
+
+    .btn-ghost:hover { color: var(--black); border-color: var(--black); }
+
+    .hero-image-wrap {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-left: 60px;
+    }
+
+    .hero-image-wrap img,
+    .hero-image-wrap .img-placeholder {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+    }
+
+    .img-placeholder {
+      background: linear-gradient(135deg, #c8d8e8 0%, #8aa8c0 40%, #3a6080 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+    }
+
+    /* vertical scroll label */
+    .scroll-label {
+      position: absolute;
+      left: 30px;
+      bottom: 100px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray-2);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scroll-label::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: var(--gray-2);
+    }
+
+    /* ─── WORK SECTION ─── */
+    #work {
+      padding: 100px 60px;
+      background: var(--white);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    /* filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--gray-1);
+    }
+
+    .filter-tab {
+      padding: 10px 20px 12px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-3);
+      cursor: pointer;
+      border: none;
+      background: none;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .filter-tab:first-child { padding-left: 0; }
+
+    .filter-tab.active { color: var(--black); font-weight: 500; }
+
+    .filter-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 2px;
+      background: var(--black);
+    }
+
+    .filter-tab:first-child.active::after { left: 0; }
+
+    /* grid */
+    .work-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .work-item {
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .work-item:nth-child(2) {
+      grid-row: span 2;
+    }
+
+    .work-item img,
+    .work-item .work-img {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .work-item:hover img,
+    .work-item:hover .work-img { transform: scale(1.04); }
+
+    .work-img {
+      aspect-ratio: 1.1;
+    }
+
+    /* color palette for placeholders */
+    .c1 { background: linear-gradient(160deg, #d4e5d0 0%, #8faa80 60%, #5a7a4a 100%); }
+    .c2 { background: linear-gradient(140deg, #e8d8c0 0%, #c8a880 50%, #a08060 100%); }
+    .c3 { background: linear-gradient(150deg, #d0d8e8 0%, #a0b0cc 50%, #6080a8 100%); }
+    .c4 { background: linear-gradient(170deg, #d8d0c8 0%, #a8a098 50%, #706860 100%); }
+    .c5 { background: linear-gradient(140deg, #c8e0d8 0%, #88b8a8 50%, #488070 100%); }
+    .c6 { background: linear-gradient(155deg, #182030 0%, #203050 40%, #102848 100%); }
+
+    .view-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--gray-3);
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .view-more:hover { color: var(--black); }
+
+    .view-more svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .view-more:hover svg { transform: translateY(3px); }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 100px 60px;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-text h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-family: var(--kr);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-3);
+      line-height: 2;
+      max-width: 420px;
+      margin-bottom: 28px;
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: gap 0.2s;
+    }
+
+    .link-arrow:hover { gap: 14px; }
+
+    .about-illustration {
+      width: 200px;
+      opacity: 0.7;
+    }
+
+    .about-illustration svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 100px 60px;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-left h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .contact-left p {
+      font-family: var(--kr);
+      font-size: 13px;
+      color: var(--gray-3);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .btn-outline {
+      padding: 12px 28px;
+      border: 1.5px solid var(--black);
+      background: transparent;
+      color: var(--black);
+      font-size: 13px;
+      font-family: var(--sans);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-top: 8px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--gray-3);
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--black); }
+
+    .social-icon {
+      width: 32px; height: 32px;
+      border: 1px solid var(--gray-1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .social-icon svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 28px 60px;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-1);
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--gray-2);
+      letter-spacing: 0.03em;
+    }
+
+    .back-to-top {
+      width: 36px; height: 36px;
+      border: 1px solid var(--gray-1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      background: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .back-to-top:hover { background: var(--black); border-color: var(--black); }
+    .back-to-top:hover svg { stroke: var(--white); }
+    .back-to-top svg { width: 14px; height: 14px; stroke: var(--gray-3); fill: none; stroke-width: 1.5; }
+
+    /* ─── FADE-IN ANIMATION ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger children */
+    .stagger > * { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      #hero { padding: 90px 24px 40px; flex-direction: column; }
+      .hero-text { flex: unset; }
+      .hero-image-wrap { padding-left: 0; padding-top: 36px; }
+      #work, #about, #contact, footer { padding-left: 24px; padding-right: 24px; }
+      #about { grid-template-columns: 1fr; }
+      .about-illustration { display: none; }
+      #contact { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-item:nth-child(2) { grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a href="#" class="nav-logo">LOGO</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Sketches</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <div class="nav-dot">
+          <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3"/></svg>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="scroll-label">TOPICS</div>
+
+    <div class="hero-text fade-up">
+      <h1>Illustrations<br>that tell stories.</h1>
+      <p>프리렌서 일러스트레이터<br>그림을 그립니다.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap fade-up" style="transition-delay:0.2s">
+      <div class="img-placeholder" style="background:linear-gradient(160deg,#c8dbe8 0%,#7aa8c4 40%,#3a6888 70%,#f5e8d0 100%); border-radius:2px; width:100%; max-width:500px; aspect-ratio:3/4; box-shadow:0 30px 80px rgba(0,0,0,0.12);">
+        <img src="https://github.com/wduet/wduet.github.io/blob/main/images/assdde.png?raw=true" alt="main">
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WORK ─── -->
+  <section id="work">
+    <div class="section-header fade-up">
+      <h2 class="section-title">Work</h2>
+    </div>
+
+    <div class="filter-tabs fade-up">
+      <button class="filter-tab active" onclick="filterWork(this,'all')">All</button>
+      <button class="filter-tab" onclick="filterWork(this,'character')">Character</button>
+      <button class="filter-tab" onclick="filterWork(this,'editorial')">Editorial</button>
+      <button class="filter-tab" onclick="filterWork(this,'background')">Background</button>
+      <button class="filter-tab" onclick="filterWork(this,'personal')">Personal</button>
+    </div>
+
+    <div class="work-grid fade-up">
+      <!-- item 1: street scene -->
+      <div class="work-item" data-cat="background">
+        <img src="https://github.com/wduet/wduet.github.io/blob/main/images/pictes.png?raw=true" alt="Illust">
+        <div class="work-img c1"></div>
+      </div>
+      <!-- item 2: portrait (tall) -->
+      <div class="work-item" data-cat="character">
+        <div class="work-img c2" style="aspect-ratio:0.9; min-height:412px;"></div>
+      </div>
+      <!-- item 3: room interior -->
+      <div class="work-item" data-cat="background">
+        <div class="work-img c3"></div>
+      </div>
+      <!-- item 4: winter street -->
+      <div class="work-item" data-cat="background">
+        <div class="work-img c4"></div>
+      </div>
+      <!-- item 5: steps + greenery -->
+      <div class="work-item" data-cat="background">
+        <div class="work-img c5"></div>
+      </div>
+      <!-- item 6: night city -->
+      <div class="work-item" data-cat="editorial">
+        <div class="work-img c6"></div>
+      </div>
+    </div>
+
+    <a href="#" class="view-more fade-up">
+      View More
+      <svg viewBox="0 0 16 16"><polyline points="2,5 8,11 14,5"/></svg>
+    </a>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="about-text fade-up">
+      <h2>About</h2>
+      <p>
+        안녕하세요, 일러스트레이터 OOO입니다.<br>
+        크리쳐를 그리는 것을 좋아합니다.
+      </p>
+      <a href="#" class="link-arrow">More About Me &nbsp;→</a>
+    </div>
+
+    <!-- Inline line-art illustration (SVG) -->
+    <div class="about-illustration fade-up" style="transition-delay:0.15s">
+      <svg viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111110" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- desk -->
+        <line x1="20" y1="130" x2="180" y2="130"/>
+        <line x1="40" y1="130" x2="40" y2="165"/>
+        <line x1="160" y1="130" x2="160" y2="165"/>
+        <!-- laptop -->
+        <rect x="60" y="100" width="80" height="30" rx="2"/>
+        <line x1="50" y1="130" x2="150" y2="130"/>
+        <!-- figure -->
+        <circle cx="100" cy="72" r="14"/>
+        <path d="M85 86 Q100 130 115 86"/>
+        <!-- lamp -->
+        <line x1="160" y1="130" x2="160" y2="70"/>
+        <path d="M160 70 Q170 55 180 65 Q170 80 155 78 Z"/>
+        <!-- plant -->
+        <line x1="40" y1="130" x2="40" y2="95"/>
+        <ellipse cx="40" cy="88" rx="12" ry="9"/>
+        <ellipse cx="50" cy="95" rx="9" ry="7"/>
+        <!-- books -->
+        <rect x="68" y="118" width="8" height="12" rx="1"/>
+        <rect x="77" y="120" width="6" height="10" rx="1"/>
+        <rect x="84" y="119" width="7" height="11" rx="1"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="contact-left fade-up">
+      <h2>Let's work together!</h2>
+      <p>언락 주시면 함께 멋진 작업을 만들어요.</p>
+      <a href="mailto:hello@yourname.com" class="btn-outline">Send Email</a>
+    </div>
+
+    <div class="social-links fade-up" style="transition-delay:0.15s">
+      <a href="#" class="social-link">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </span>
+        Instagram
+      </a>
+      <a href="#" class="social-link">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h4l3 8-3 5h14V3H2Z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </span>
+        Behance
+      </a>
+      <a href="mailto:hello@yourname.com" class="social-link">
+        <span class="social-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><polyline points="2,5 12,13 22,5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </span>
+        Email
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>© 2024 YOUR NAME. All Rights Reserved.</p>
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg viewBox="0 0 14 14"><polyline points="2,9 7,4 12,9"/></svg>
+    </button>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Filter tabs
+    function filterWork(btn, cat) {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.work-item').forEach(item => {
+        const match = cat === 'all' || item.dataset.cat === cat;
+        item.style.opacity = match ? '1' : '0.25';
+        item.style.pointerEvents = match ? 'auto' : 'none';
+      });
+    }
+  </script>
+</body>
 </html>
